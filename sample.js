@@ -12,7 +12,7 @@ var SwellSample = function (country, lang, today) {
     GB: { city: 'London', hood: 'Hackney', transit: de ? 'Oyster & Taxi' : 'Oyster & cabs', grocer: 'Daylesford', club: de ? 'Dinner im Soho House' : 'Dinner at Soho House', surf: 'Hackney Wick Studios', skin: 'Saltbush Skincare', studio: 'Hackney Pilates Co.', gallery: 'Bermondsey Gallery' }
   }[country];
   // Rough local equivalent of the same life: pay, rent and clients' budgets.
-  var k = { AU: 1, DE: 0.6, AT: 0.6, GB: 0.52, US: 0.72, CA: 0.88 }[country];
+  var k = { AU: 1, DE: 0.6, AT: 0.6, GB: 0.52, US: 1.45, CA: 0.88 }[country];
   var r = function (n, step) { step = step || 10; return Math.round(n * k / step) * step; };
   var L = de ? {
     job: 'Head of Marketing, 3 Tage', studio: 'Studio: Markenidentität', contract: 'Art-Direction-Aufträge', teach: 'Workshops & Vorträge',
