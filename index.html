@@ -519,7 +519,11 @@ footer{margin-top:44px;border-top:1px solid var(--ink);padding-top:18px;display:
   }
   var blocked = { "ob-start": 1, "start-fresh": 1, "import": 1 };
   document.addEventListener("click", function (e) { var a = e.target.closest && e.target.closest("[data-act]"); if (a && blocked[a.dataset.act]) { e.preventDefault(); e.stopImmediatePropagation(); note(); } }, true);
-  function sample() { var b = document.querySelector('[data-act="ob-sample"]'); if (b) b.click(); }
+  // The demo is set in the United States: pick it on the welcome screen, then load the example
+  function sample() {
+    var us = document.querySelector('.welcome [data-act="set-country"][data-v="US"]'); if (us) us.click();
+    setTimeout(function () { var b = document.querySelector('[data-act="ob-sample"]'); if (b) b.click(); }, 60);
+  }
   if (document.readyState === "complete") sample(); else addEventListener("load", sample);
 })();
 </script></body></html>
